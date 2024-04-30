@@ -31,22 +31,36 @@
             <h2>Catálogo de Mangas</h2>
             <div class="manga-grid">
                 <div class="manga-card">
-                    <img src="img/OnePiece.png" alt="Portada del manga One Piece">
+
+                    <a onclick="return confirmPurchase()">
+                        <img src="img/OnePiece.png" alt="Portada del manga One Piece">
+                    </a>
                     <h3>One Piece</h3>
                     <p>One Piece narra la historia de un joven llamado Monkey D. Luffy, que inspirado por su amigo pirata Shanks, comienza un viaje para alcanzar su sueño, ser el Rey de los piratas.</p>
                 </div>
                 <div class="manga-card">
-                    <img src="img/Monster.png" alt="Portada del Manga Monster">
+                    <a onclick="return confirmPurchase()">
+                        <img src="img/Monster.png" alt="Portada del Manga Monster">
+                    </a>
+                    
                     <h3>Monster</h3>
                     <p>La serie narra la historia de un neurocirujano japonés llamado Kenzo Tenma, quien creyendo hacer lo correcto le salva la vida a un niño aparentemente normal; pero lejos de la realidad, este infante es en realidad un asesino sociópata.</p>
                 </div>
                 <div class="manga-card">
-                    <img src="img/DeathNote.png" alt="Portada del Manga Death Note">
+                    <a onclick="return confirmPurchase()">
+                        <img src="img/DeathNote.png" alt="Portada del Manga Death Note">
+                    </a>
+                    
+                    
                     <h3>Death Note</h3>
                     <p>Un libro malévolo (Death Note) cae en manos de Yagami Light, un joven de 17 años de edad. Este cuaderno negro lo encuentra un día en el patio de su colegio. Ese libro tiene unas instrucciones claras y encierra una magia oscura.</p>
                 </div>
                 <div class="manga-card">
-                    <img src="img/SHingekiNoKyojin.png" alt="Portada del Manga Shingeki">
+                    <a onclick="return confirmPurchase()">
+                        <img src="img/SHingekiNoKyojin.png" alt="Portada del Manga Shingeki">
+                    </a>
+                    
+                    
                     <h3>Shingeki no Kyojin</h3>
                     <p>La historia se desarrolla en un mundo ficticio en el que la humanidad está al borde de la extinción a causa de unas criaturas humanoides llamadas «titanes».</p>
                 </div>
@@ -54,7 +68,16 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function confirmPurchase() {
+            if (confirm("¿Estás seguro de querer comprar este manga?")) {
+                alert("¡Compra exitosa! Gracias por tu compra.");
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
   
     <footer id="main-footer">
 		<p>&copy; 2024 <a href="contacto.htm">Contacto</a></p>

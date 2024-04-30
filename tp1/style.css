@@ -6,6 +6,7 @@ body {
 	background: #f78e06; 
 	font-size: 1em;
 	line-height: 1.5em;
+	background: linear-gradient(to bottom, #f78e06, #e0760c);
 
 }
 
@@ -131,16 +132,18 @@ nav {
 		width: 200px; 
         display: inline-block; 
         vertical-align: top; 
-		
+		transition: transform 0.3s ease;
 		margin-left: 20px; 
 		max-width: 100%; 
-        height: auto; 
+        height: 550px; 
     
 	}
-
+	.manga-card:hover {
+		transform: scale(1.05);
+	}
 	.manga-card img {
 		width: 100%;
-		height: auto;
+		height: 250px;
 	}
 
 	.manga-card .manga-info {
@@ -154,3 +157,53 @@ nav {
 	.manga-card p {
 		margin-bottom: 0;
 	}
+
+	/* Estilos para pantallas grandes */
+@media screen and (min-width: 768px) {
+    /* Ajustar el ancho del contenido principal */
+    #main-content {
+        width: 80%;
+        max-width: 1000px;
+    }
+
+    /* Alinear el contenido principal al centro */
+    #main-content {
+        margin: 20px auto;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+    /* Ajustar el tamaño de la fuente */
+    body {
+        font-size: 0.9em;
+    }
+
+    /* Reducir el tamaño de las tarjetas de manga */
+    .manga-card {
+        width: calc(50% - 10px);
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    /* Alinear el contenido principal al centro */
+    #main-content {
+        width: 90%;
+        max-width: none;
+        margin: 20px auto;
+    }
+}
+
+/* Estilos para pantallas muy pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    /* Ajustar el tamaño de la fuente */
+    body {
+        font-size: 0.8em;
+    }
+
+    /* Reducir aún más el tamaño de las tarjetas de manga */
+    .manga-card {
+        width: 100%;
+        margin: 0;
+    }
+}
