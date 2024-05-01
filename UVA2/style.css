@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    background: #f78e06;
+    font-size: 1em;
+    line-height: 1.5em;
+    background: linear-gradient(to bottom, #f78e06, #e0760c);
+}
+
+h1 {
+    font-size: 2.3em;
+    line-height: 1.3em;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+p {
+    margin: 0 0 1.5em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#main-header {
+    background: #333;
+    color: white;
+    height: 80px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
+
+#main-header a {
+    color: white;
+}
+
+#logo-header {
+    float: left;
+    padding: 15px 0 0 20px;
+    text-decoration: none;
+}
+
+#logo-header:hover {
+    color: #0b76a6;
+}
+
+#logo-header .site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+#logo-header .site-desc {
+    display: block;
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #999;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #0b76a6;
+}
+
+#main-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+#main-content header,
+#main-content .content {
+    padding: 40px;
+}
+
+#main-footer {
+	background: #333;
+    color: rgb(236, 120, 12);
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#main-footer img {
+    background-color: #fff; 
+    padding: 10px; 
+    border-radius: 5px;
+}
+#main-footer p {
+    margin: 0;
+}
+#main-footer a {
+    color: white;
+}
+
+img.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.manga-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+    max-width: 100%;
+    height: 550px;
+}
+
+.manga-card:hover {
+    transform: scale(1.05);
+}
+
+.manga-card img {
+    width: 100%;
+    height: 250px;
+}
+
+.manga-card .manga-info {
+    padding: 20px;
+}
+
+.manga-card h3 {
+    margin-top: 0;
+}
+
+.manga-card p {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    #main-content {
+        width: 80%;
+        max-width: 1000px;
+    }
+
+    #main-content {
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    .manga-card {
+        width: calc(50% - 10px);
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #main-content {
+        width: 90%;
+        max-width: none;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.8em;
+    }
+    .manga-card {
+        width: 100%;
+        margin: 0;
+    }
+}

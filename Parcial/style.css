@@ -40,7 +40,6 @@ img {
     color: white;
 }
 
-
 nav {
     float: right;
 }
@@ -74,39 +73,44 @@ nav ul li a:hover {
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
+
 .container {
-    margin-top: 80px; /* Espacio para el encabezado */
+    margin-top: 80px;
     padding: 40px;
-	width: 60%;
-    text-align: left; /* Alinear el contenido a la izquierda */
-    display: flex; /* Usar flexbox para alinear elementos */
+    width: 80%; 
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0 auto;
+    justify-content: flex-start;
 }
 
-.container ul {
-	color: #333;
-	font-size: 1.1em;
-	padding: 20px; /* Añadir un poco de espacio alrededor del contenido */
-	border-radius: 8px; /* Agregar bordes redondeados */
-	margin-left: 150px;
-	margin-bottom: auto; /* Margen izquierdo para separar del borde de la página */
-}
-.container ul li {
-    margin-bottom: 30px; /* Ajusta el valor según el espacio deseado */
-}
 .container img {
     width: 600px;
     height: 700px;
-    margin-left: 70px; /* Margen izquierdo de 200px */
+    margin-left: 0; 
+    max-width: 50%;
+    order: 1;
 }
 
+.container ul {
+    color: #333;
+    font-size: 1.1em;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 50px; 
+    margin-bottom: auto;
+    flex-basis: 50%;
+    order: 2;
+}
 
-#main-content header,
-#main-content .content {
-    padding: 40px;
+.container ul li {
+    margin-bottom: 30px;
 }
 
 #main-footer {
-	background: #333;
+    background: #333;
     color: rgb(236, 120, 12);
     text-align: center;
     padding: 20px;
@@ -114,28 +118,26 @@ nav ul li a:hover {
     width: 100%;
     bottom: 0;
 }
+
 #main-footer img {
-    background-color: #fff; /* Color de fondo para la imagen */
-    padding: 10px; /* Espaciado interior para separar la imagen del borde */
-    border-radius: 5px; /* Borde redondeado */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
 }
+
 #main-footer p {
     margin: 0;
 }
+
 #main-footer a {
     color: white;
 }
 
-/* Estilos para pantallas grandes */
-@media screen and (min-width: 768px) {
-    /* Ajustar el ancho del contenido principal */
-    #main-content {
-        width: 80%;
-        max-width: 1000px;
-    }
-
-    /* Alinear el contenido principal al centro */
-    #main-content {
-        margin: 20px auto;
+@media screen and (max-width: 768px) {
+    .container img,
+    .container ul {
+        flex-basis: 100%;
+        max-width: 100%; 
+        margin-left: 0;
     }
 }
