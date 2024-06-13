@@ -7,8 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="score-board">
+        <span>Puntos: <span id="score">0</span></span>
+        <span>Errores restantes: <span id="errors">5</span></span>
+    </div>
     <div class="game-board" id="gameBoard"></div>
+    <div class="victory-message" id="victoryMessage">
+        ¡Felicidades! Has encontrado todos los pares.
+        <button onclick="resetGame()">Jugar otra vez</button>
+    </div>
+    <div class="defeat-message" id="defeatMessage">
+        Has alcanzado el límite de errores. ¡Perdiste el juego!
+        <button onclick="resetGame()">Jugar otra vez</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
-

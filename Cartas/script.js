@@ -17,14 +17,22 @@ const cardsArray = [
     { name: 'card8', img: 'Imagenes/imagen8.png' }
 ];
 
-cardsArray.sort(() => 0.5 - Math.random());
-
 const gameBoard = document.getElementById('gameBoard');
+const scoreElement = document.getElementById('score');
+const errorsElement = document.getElementById('errors');
+const victoryMessage = document.getElementById('victoryMessage');
+const defeatMessage = document.getElementById('defeatMessage');
+let score = 0;
+let errors = 5;
+const maxErrors = 5;
+let matchedPairs = 0;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
 function createBoard() {
+    cardsArray.sort(() => 0.5 - Math.random());
+    gameBoard.innerHTML = '';
     cardsArray.forEach(card => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
@@ -71,6 +79,14 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
+    score += 10;
+    matchedPairs++;
+    scoreElement.textContent = score;
+
+    if (matchedPairs === cardsArray.length / 2) {
+        victoryMessage.style.display = 'block';
+    }
+
     resetBoard();
 }
 
@@ -81,6 +97,14 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 
+        errors--;
+        errorsElement.textContent = errors;
+
+        if (errors <= 0) {
+            defeatMessage.style.display = 'block';
+            disableAllCards();
+        }
+
         resetBoard();
     }, 1500);
 }
@@ -88,6 +112,22 @@ function unflipCards() {
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+}
+
+function disableAllCards() {
+    const allCards = document.querySelectorAll('.card');
+    allCards.forEach(card => card.removeEventListener('click', flipCard));
+}
+
+function resetGame() {
+    score = 0;
+    errors = maxErrors;
+    matchedPairs = 0;
+    scoreElement.textContent = score;
+    errorsElement.textContent = errors;
+    victoryMessage.style.display = 'none';
+    defeatMessage.style.display = 'none';
+    createBoard();
 }
 
 createBoard();
