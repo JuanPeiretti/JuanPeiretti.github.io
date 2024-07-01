@@ -19,13 +19,20 @@ h1 {
 
 p {
     margin: 0 0 1em 0;
+    text-align: justify; /* Justificar el texto */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    display: block; /* Asegura que la imagen no tenga espacios adicionales */
+    display: block;
 }
 
 /* Encabezado fijo */
@@ -48,12 +55,9 @@ img {
 
 /* Contenedor principal */
 .content-container {
-    padding: 100px 20px 120px; /* Ajuste para el encabezado fijo y el footer */
+    padding: 100px 20px 120px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: flex-start; /* Alinea el contenido hacia arriba */
-    margin-top: 80px; /* Nuevo margen superior para separar del encabezado */
+    margin-top: 80px; /* Añadido margen superior para evitar que la ficha toque el header */
 }
 
 /* Contenedor de perfil */
@@ -61,66 +65,53 @@ img {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    justify-content: center; /* Centra horizontalmente los elementos */
+    justify-content: flex-start; /* Alinea al principio del contenedor */
 }
 
 .profile-container img {
     max-width: 100%; /* Ancho máximo de la imagen */
-    height: auto; /* Altura automática para mantener la proporción */
+    height: auto;
     border-radius: 10px;
-    max-width: 300px; /* Nuevo ancho máximo ajustado para la imagen */
-    width: 100%;
+    width: 20%; /* Ancho inicial de la imagen */
 }
 
 .profile-container .info {
-    flex: 1; /* Toma todo el espacio restante */
-    max-width: 600px; /* Máximo ancho para el contenido */
+    flex: 1; /* Ocupa todo el espacio restante */
+    padding: 0 20px; /* Espaciado horizontal para el texto */
 }
 
-/* Pie de página fijo */
+.profile-container .info h2 {
+    margin-top: 0; /* Ajuste de margen superior */
+}
+
+.profile-container .info ul {
+    margin-top: 0; /* Ajuste de margen superior */
+}
+
+/* Footer */
 #main-footer {
     background: #333;
     color: rgb(236, 120, 12);
     text-align: center;
     padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
     position: fixed;
+    width: 100%;
     bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    z-index: 1000; /* Asegura que esté sobre cualquier otro contenido */
 }
 
 #main-footer img {
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
-    max-width: 50px; /* Ajuste el tamaño máximo de la imagen del footer */
+    width: 50px; /* Ancho de la imagen */
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
-/* Media query para pantallas más pequeñas (celulares) */
-@media screen and (max-width: 768px) {
-    .content-container {
-        padding: 20px; /* Ajuste de padding para dispositivos móviles */
-        flex-direction: column; /* Cambia a disposición de columna en pantallas pequeñas */
-        align-items: center; /* Centra verticalmente el contenido */
-    }
-
-    .profile-container img {
-        max-width: 100%; /* Ancho máximo para la imagen en pantallas pequeñas */
-        margin-bottom: 20px; /* Espacio inferior para separación */
-    }
-
-    .profile-container .info {
-        text-align: center; /* Centra el texto en dispositivos móviles */
-    }
+#main-footer p {
+    margin: 0;
 }
-
-
-
-
 
 
 
