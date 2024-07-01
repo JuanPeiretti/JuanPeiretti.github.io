@@ -58,6 +58,8 @@ img {
     padding: 100px 20px 120px;
     box-sizing: border-box;
     margin-top: 80px; /* Añadido margen superior para evitar que la ficha toque el header */
+    display: flex;
+    justify-content: center; /* Centrar contenido en escritorio */
 }
 
 /* Contenedor de perfil */
@@ -69,10 +71,9 @@ img {
 }
 
 .profile-container img {
-    max-width: 100%; /* Ancho máximo de la imagen */
+    max-width: 30%; /* Ancho inicial de la imagen en escritorio */
     height: auto;
     border-radius: 10px;
-    width: 20%; /* Ancho inicial de la imagen */
 }
 
 .profile-container .info {
@@ -112,6 +113,25 @@ img {
 #main-footer p {
     margin: 0;
 }
+
+/* Media Query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Apilar elementos en dispositivos móviles */
+        align-items: center; /* Centrar contenido en dispositivos móviles */
+    }
+
+    .profile-container img {
+        max-width: 90%; /* Ancho máximo de la imagen en móviles */
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .profile-container .info {
+        width: 100%; /* Ancho completo en dispositivos móviles */
+        padding: 0; /* Eliminar espaciado horizontal */
+    }
+}
+
 
 
 
