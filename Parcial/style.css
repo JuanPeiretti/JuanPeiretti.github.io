@@ -71,7 +71,7 @@ img {
 }
 
 .profile-container img {
-    max-width: 30%; /* Ancho inicial de la imagen en escritorio */
+    max-width: 20%; /* Ancho inicial de la imagen en escritorio */
     height: auto;
     border-radius: 10px;
 }
@@ -116,7 +116,7 @@ img {
 
 /* Media Query para dispositivos móviles */
 @media screen and (max-width: 768px) {
-    .content-container {
+    .profile-container {
         flex-direction: column; /* Apilar elementos en dispositivos móviles */
         align-items: center; /* Centrar contenido en dispositivos móviles */
     }
@@ -131,6 +131,7 @@ img {
         padding: 0; /* Eliminar espaciado horizontal */
     }
 }
+
 
 
 
