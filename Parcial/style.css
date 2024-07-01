@@ -100,9 +100,10 @@ img {
     max-width: 50px; /* Ajuste el tamaño máximo de la imagen del footer */
 }
 
-/* Media query para pantallas más pequeñas */
+/* Media query para pantallas más pequeñas (celulares) */
 @media screen and (max-width: 768px) {
     .content-container {
+        padding: 20px; /* Ajuste de padding para dispositivos móviles */
         flex-direction: column; /* Cambia a disposición de columna en pantallas pequeñas */
         align-items: center; /* Centra verticalmente el contenido */
     }
@@ -111,7 +112,12 @@ img {
         max-width: 100%; /* Ancho máximo para la imagen en pantallas pequeñas */
         margin-bottom: 20px; /* Espacio inferior para separación */
     }
+
+    .profile-container .info {
+        text-align: center; /* Centra el texto en dispositivos móviles */
+    }
 }
+
 
 
 
